@@ -1,0 +1,37 @@
+.site-header {
+  background-color: $dark-turquoise;
+  position: sticky;
+  top: 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: em(18) 0;
+
+  &__back-btn {
+    align-items: center;
+    color: $white;
+    display: flex;
+    font-family: $poppins;
+    text-decoration: none;
+  }
+
+  &__tools {
+    display: flex;
+    gap: em(18);
+
+    &-btn {
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  .icon {
+    height: em(24);
+    stroke: $white;
+    width: em(24);
+  }
+}

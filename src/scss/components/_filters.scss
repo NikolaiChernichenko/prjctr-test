@@ -1,0 +1,71 @@
+.product-filters {
+  &__form {
+    display: grid;
+    font-family: $plus-jakarta;
+    grid-gap: em(12);
+    grid-template-areas:
+    "artist artist"
+    "genre decade"
+    "country country"
+    "search search";
+  }
+
+  &__input {
+    border: solid em(1) #EDEEF0;
+    border-radius: em(4);
+    color: $ink-light;
+    padding: em(11) em(14);
+
+    &.input-artist {
+      grid-area: artist;
+    }
+  }
+
+  &__select {
+    position: relative;
+
+    &::after {
+      background-image: svg-load('../images/svg-icons/icon-arrow.svg', stroke=$dark-turquoise);
+      content: '';
+      display: block;
+      height: em(24);
+      position: absolute;
+      right: em(9);
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      width: em(24);
+    }
+
+    &-element {
+      appearance: none;
+      border: solid em(1) #EDEEF0;
+      border-radius: em(4);
+      color: $ink-light;
+      padding: em(11) em(14);
+      width: 100%;
+    }
+
+    &.genre-select {
+      grid-area: genre;
+    }
+
+    &.decade-select {
+      grid-area: decade;
+    }
+
+    &.country-select {
+      grid-area: country;
+    }
+  }
+
+  &__button {
+    appearance: none;
+    background-color: $dark-turquoise;
+    border: none;
+    border-radius: em(4);
+    color: $white;
+    font-size: em(16);
+    grid-area: search;
+    padding: em(11) em(20) em(13);
+  }
+}

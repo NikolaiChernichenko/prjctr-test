@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Projector Test Site</title>
+	<meta name="description" content="Immerse yourself in the rich, authentic sound of music with Nick's Vinyl Store, your go-to online destination for meticulously curated vinyl records spanning genres from classic to contemporary.">
+	<meta name="keywords" content="prjctr, vinyl, music, store">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Nick Chernichenko">
+	<link rel="apple-touch-icon" sizes="180x180" href="src/images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="src/images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="src/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="src/images/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="src/images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Top nav bar -->
+	<header class="site-header">
+		<div class="content-container">
+			<div class="nav-bar">
+				<a href="#" class="nav-bar__back-btn">
+					<svg class="icon">
+						<use xlink:href="images/svg-sprite.svg#icon-arrow"></use>
+					</svg>Back</a>
+				<div class="nav-bar__tools">
+					<button class="nav-bar__tools-btn nav-bar__tools-btn--favourites" aria-label="Favourites">
+						<svg class="icon">
+							<use xlink:href="images/svg-sprite.svg#icon-heart"></use>
+						</svg>
+						<span class="screen-reader-only">Favourites</span>
+					</button>
+					<button class="nav-bar__tools-btn nav-bar__tools-btn--collection" aria-label="My collection">
+						<svg class="icon">
+							<use xlink:href="images/svg-sprite.svg#icon-folder"></use>
+						</svg>
+						<span class="screen-reader-only">My collection</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="site-main content-container">
+		<!-- Product filters -->
+		<div class="product-filters">
+			<form class="product-filters__form">
+				<label for="artist" class="screen-reader-only product-filters__label">Artist</label>
+				<input type="text" id="artist" name="artist" class="product-filters__input input-artist" placeholder="Artist">
+
+				<label for="genre" class="screen-reader-only product-filters__label">Genre</label>
+				<div class="product-filters__select genre-select">
+					<select id="genre" name="genre" class="product-filters__select-element">
+						<option value="Genre">Genre</option>
+						<option value="Rock">Rock</option>
+						<option value="Blues">Blues</option>
+						<option value="Dark country">Dark country</option>
+						<option value="DnB">DnB</option>
+						<option value="House">House</option>
+					</select>
+				</div>
+
+				<label for="decade" class="screen-reader-only product-filters__label">Decade</label>
+				<div class="product-filters__select decade-select">
+					<select id="decade" name="decade" class="product-filters__select-element">
+						<option value="Decade">Decade</option>
+						<option value="1950-60">1950-60 yy</option>
+						<option value="1960-70">1960-70 yy</option>
+						<option value="1970-80">1970-80 yy</option>
+						<option value="1980-90">1980-90 yy</option>
+						<option value="1990-00">1990-00 yy</option>
+						<option value="2000-10">2000-10 yy</option>
+						<option value="2020-30">2020-30 yy</option>
+					</select>
+				</div>
+
+				<label for="country" class="screen-reader-only product-filters__label">Country</label>
+				<div class="product-filters__select country-select">
+					<select id="country" name="country" class="product-filters__select-element">
+						<option value="Country">Country</option>
+						<option value="Australia">Australia</option>
+						<option value="Canada">Canada</option>
+						<option value="UK">UK</option>
+						<option value="USA">USA</option>
+						<option value="Ukraine">Ukraine</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+				<button type="button" class="product-filters__button">Search</button>
+			</form>
+		</div>
+
+		<!-- Products grid -->
+		<div class="products-grid">
+			<div class="product-grid__item">
+				<div class="product-cover">
+					<img src="" alt="">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favorites</span>
+					</button>
+				</div>
+				<h3 class="product-title">Let There Be Rock</h3>
+				<h4 class="product-band">AC/DC</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1990</span></p>
+					<p class="product-details__field">Style: <span>Punk, Dub, Funk</span></p>
+					<p class="product-details__field">Country: <span>USA</span></p>
+				</div>
+				<button class="product-add-btn">Add +</button>
+			</div>
+		</div>
+		<!-- Pagination -->
+		<div class="paginator">
+			<ul class="pagination-list">
+				<li class="pagination-item"><a href="#" class="pagination-link">1</a></li>
+				<li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
+				<li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+				<li class="pagination-item"><span class="pagination-ellipsis">...</span></li>
+				<li class="pagination-item"><a href="#" class="pagination-link">8</a></li>
+				<li class="pagination-item"><a href="#" class="pagination-link pagination-next">Next</a></li>
+			</ul>
+		</div>
+	</main>
+</body>
+
+</html>

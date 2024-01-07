@@ -1,0 +1,6 @@
+// Calculate ems
+$base-font-size: 16;
+
+@function em($target, $base: $base-font-size) {
+  @return calc($target / $base) * 1em;
+}

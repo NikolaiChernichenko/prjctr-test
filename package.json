@@ -1,0 +1,69 @@
+{
+  "author": "Nick Chernichenko",
+  "name": "prjctr-test",
+  "description": "Nick's vinyl store",
+  "browserslist": [
+    "last 2 versions",
+    "> 5%"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.0",
+    "autoprefixer": "^10.4.0",
+    "babel-loader": "^9.1.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^5.0.0",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.2.3",
+    "imagemin": "^8.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
+    "mini-css-extract-plugin": "^2.4.4",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^7.0.0",
+    "sass": "^1.50.1",
+    "sass-lint": "^1.13.1",
+    "sass-loader": "^13.0.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svg-sprite-plugin": "0.0.1",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/NikolaiChernichenko/prjctr-test.git"
+  },
+  "scripts": {
+    "build": "webpack --config configuration/webpack.dev.config.js --mode=development",
+    "watch": "webpack --config configuration/webpack.dev.config.js --mode=development --watch",
+    "bundle": "npm install && npm run watch",
+    "dev": "webpack serve --config configuration/webpack.dev.config.js --mode=development",
+    "production": "webpack --config configuration/webpack.prod.config.js --mode=production",
+    "lint:sass": "sass-lint -v -q",
+    "lint:js": "eslint --ext .js src/js/",
+    "stats": "webpack --config configuration/webpack.prod.config.js --mode=production --json > dist/stats.json && webpack-bundle-analyzer dist/stats.json"
+  },
+  "target": "web",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "postcss-inline-svg": "^6.0.0"
+  }
+}

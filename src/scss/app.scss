@@ -1,0 +1,18 @@
+// Core variables
+@import 'base/vars';
+
+// CSS Reset
+@import '../../node_modules/normalize.css';
+
+// Mixins, helpers and functions
+@import 'mixins/ems';
+@import 'mixins/media-query';
+@import 'base/helpers';
+
+// Layout
+@import 'global/layout';
+
+// Components
+@import 'components/header';
+@import 'components/filters';
+
