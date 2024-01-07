@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Let There Be Rock",
+    "band": "AC/DC",
+    "cover": "images/content/cover-1.jpg",
+    "cover2x": "images/content/cover-1@2x.jpg",
+    "year": 1990,
+    "style": ["Punk", "Dub", "Funk"],
+    "country": "Australia"
+  },
+  {
+    "title": "High Voltage",
+    "band": "AC/DC",
+    "cover": "images/content/cover-2.jpg",
+    "cover2x": "images/content/cover-2@2x.jpg",
+    "year": 1975,
+    "style": ["Punk", "Blues", "Hard Rock"],
+    "country": "Australia"
+  },
+  {
+    "title": "T.N.T.",
+    "band": "AC/DC",
+    "cover": "images/content/cover-3.jpg",
+    "cover2x": "images/content/cover-3@2x.jpg",
+    "year": 1975,
+    "style": ["Blues", "Hard Rock"],
+    "country": "Australia"
+  },
+  {
+    "title": "Back In Black",
+    "band": "AC/DC",
+    "cover": "images/content/cover-4.jpg",
+    "cover2x": "images/content/cover-4@2x.jpg",
+    "year": 1980,
+    "style": ["Blues", "Hard Rock"],
+    "country": "Australia"
+  },
+  {
+    "title": "Metallica",
+    "band": "Metallica",
+    "cover": "images/content/cover-5.jpg",
+    "cover2x": "images/content/cover-5@2x.jpg",
+    "year": 1991,
+    "style": ["Heavy Metal"],
+    "country": "USA"
+  },
+  {
+    "title": "Master Of Puppets",
+    "band": "Metallica",
+    "cover": "images/content/cover-6.jpg",
+    "cover2x": "images/content/cover-6@2x.jpg",
+    "year": 1986,
+    "style": ["Thrash", "Speed Metal"],
+    "country": "USA"
+  }
+]

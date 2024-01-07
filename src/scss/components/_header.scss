@@ -2,12 +2,13 @@
   background-color: $dark-turquoise;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  padding: em(18) 0;
+  padding: em(16) 0 em(18);
 
   &__back-btn {
     align-items: center;
@@ -15,6 +16,8 @@
     display: flex;
     font-family: $poppins;
     text-decoration: none;
+    gap: em(6, 18);
+    font-size: em(18);
   }
 
   &__tools {
@@ -33,5 +36,7 @@
     height: em(24);
     stroke: $white;
     width: em(24);
+    display: block;
+    fill: transparent;
   }
 }

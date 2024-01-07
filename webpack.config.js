@@ -10,7 +10,6 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-
 const environment = require('./configuration/environment');
 
 const templateFiles = fs.readdirSync(environment.paths.source)
@@ -125,12 +124,17 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(environment.paths.source, 'images', 'content'),
-          to: path.resolve(environment.paths.output, 'images', 'content'),
+          from: path.resolve(environment.paths.source, 'images'),
+          to: path.resolve(environment.paths.output, 'images'),
           toType: 'dir',
           globOptions: {
             ignore: ['*.DS_Store', 'Thumbs.db'],
           },
+        },
+        {
+          from: path.resolve(environment.paths.source, 'js/*.json'),
+          context: path.resolve(__dirname, 'src'),
+          to: path.resolve(environment.paths.output, ''),
         },
       ],
     }),

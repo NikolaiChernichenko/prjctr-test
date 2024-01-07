@@ -1,8 +1,10 @@
-// Core variables
-@import 'base/vars';
-
 // CSS Reset
 @import '../../node_modules/normalize.css';
+
+// Core variables
+@import 'base/vars';
+@import 'base/body';
+
 
 // Mixins, helpers and functions
 @import 'mixins/ems';
@@ -15,4 +17,5 @@
 // Components
 @import 'components/header';
 @import 'components/filters';
-
+@import 'components/products';
+@import 'components/pagination';

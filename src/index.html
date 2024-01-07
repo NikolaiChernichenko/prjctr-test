@@ -8,15 +8,14 @@
 	<meta name="keywords" content="prjctr, vinyl, music, store">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Nick Chernichenko">
-	<link rel="apple-touch-icon" sizes="180x180" href="src/images/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon/favicon-16x16.png">
-	<link rel="manifest" href="src/images/favicon/site.webmanifest">
-	<link rel="mask-icon" href="src/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href="src/images/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="images/favicon/favicon.ico">
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="src/images/favicon/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+	<meta name="theme-color" content="##08364">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins&display=swap" rel="stylesheet">
@@ -30,7 +29,9 @@
 				<a href="#" class="nav-bar__back-btn">
 					<svg class="icon">
 						<use xlink:href="images/svg-sprite.svg#icon-arrow"></use>
-					</svg>Back</a>
+					</svg>
+					<span>Back</span>
+				</a>
 				<div class="nav-bar__tools">
 					<button class="nav-bar__tools-btn nav-bar__tools-btn--favourites" aria-label="Favourites">
 						<svg class="icon">
@@ -99,33 +100,15 @@
 		</div>
 
 		<!-- Products grid -->
-		<div class="products-grid">
-			<div class="product-grid__item">
-				<div class="product-cover">
-					<img src="" alt="">
-					<button class="product-fav-btn">
-						<span class="screen-reader-only">Add to favorites</span>
-					</button>
-				</div>
-				<h3 class="product-title">Let There Be Rock</h3>
-				<h4 class="product-band">AC/DC</h4>
-				<div class="product-details">
-					<p class="product-details__field">Year: <span>1990</span></p>
-					<p class="product-details__field">Style: <span>Punk, Dub, Funk</span></p>
-					<p class="product-details__field">Country: <span>USA</span></p>
-				</div>
-				<button class="product-add-btn">Add +</button>
-			</div>
-		</div>
+		<div class="products-grid"></div>
 		<!-- Pagination -->
-		<div class="paginator">
+		<div class="pagination">
 			<ul class="pagination-list">
-				<li class="pagination-item"><a href="#" class="pagination-link">1</a></li>
-				<li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
-				<li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+				<li class="pagination-item active"><a href="#" class="pagination-link">1</a></li>
+				<li class="pagination-item"><a href="?page=2"  class="pagination-link">2</a></li>
+				<li class="pagination-item"><a href="?page=3"  class="pagination-link">3</a></li>
 				<li class="pagination-item"><span class="pagination-ellipsis">...</span></li>
 				<li class="pagination-item"><a href="#" class="pagination-link">8</a></li>
-				<li class="pagination-item"><a href="#" class="pagination-link pagination-next">Next</a></li>
 			</ul>
 		</div>
 	</main>

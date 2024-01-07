@@ -1,0 +1,30 @@
+.pagination {
+  &-list {
+    display: flex;
+    gap: em(2);
+    justify-content: center;
+    list-style: none;
+  }
+
+  &-item {
+    align-items: center;
+    border-radius: em(8);
+    color: $slate-gray;
+    display: flex;
+    font-family: $poppins;
+    font-size: em(14);
+    height: em(40, 14);
+    justify-content: center;
+    width: em(40, 14);
+
+    &.active {
+      background-color: $dark-turquoise;
+      color: $white
+    }
+  }
+
+  &-link {
+    color: inherit;
+    text-decoration: none;
+  }
+}
