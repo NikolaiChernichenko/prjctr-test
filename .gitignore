@@ -21,6 +21,3 @@ npm-debug.log
 
 # Dependency packages files
 node_modules/
-
-# Output
-dist/

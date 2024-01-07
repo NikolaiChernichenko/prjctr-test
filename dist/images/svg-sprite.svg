@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style>
+    .sprite-symbol-usage {display: none;}
+    .sprite-symbol-usage:target {display: inline;}
+  </style><symbol viewBox="0 0 24 24" fill="none" id="icon-arrow">
+<path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</symbol><symbol viewBox="0 0 24 24" id="icon-folder">
+<path d="M21 18.2222V9.33333C21 8.86184 20.8104 8.40965 20.4728 8.07625C20.1352 7.74286 19.6774 7.55556 19.2 7.55556H13.1124C12.7781 7.55554 12.4503 7.46356 12.1659 7.28992C11.8816 7.11628 11.6518 6.86783 11.5023 6.57244L10.6977 4.98311C10.5482 4.68759 10.3182 4.43906 10.0337 4.2654C9.74912 4.09175 9.4212 3.99985 9.0867 4H4.8C4.32261 4 3.86477 4.1873 3.52721 4.5207C3.18964 4.8541 3 5.30628 3 5.77778V18.2222C3 18.6937 3.18964 19.1459 3.52721 19.4793C3.86477 19.8127 4.32261 20 4.8 20H19.2C19.6774 20 20.1352 19.8127 20.4728 19.4793C20.8104 19.1459 21 18.6937 21 18.2222Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</symbol><symbol viewBox="0 0 20 18" id="icon-heart">
+<path d="M19 6.32647C19 11.4974 10 17 10 17C10 17 1 11.4974 1 6.32647C1 -0.694364 10 -0.599555 10 5.57947C10 -0.599555 19 -0.507124 19 6.32647Z" stroke-width="2" stroke-linejoin="round" />
+</symbol><symbol viewBox="0 0 20 20" fill="none" id="icon-plus">
+<path d="M10 16.6666V9.99998M10 9.99998V3.33331M10 9.99998H16.6667M10 9.99998H3.33334" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+</symbol></defs><use id="icon-arrow-usage" xlink:href="#icon-arrow" class="sprite-symbol-usage" /><use id="icon-folder-usage" xlink:href="#icon-folder" class="sprite-symbol-usage" /><use id="icon-heart-usage" xlink:href="#icon-heart" class="sprite-symbol-usage" /><use id="icon-plus-usage" xlink:href="#icon-plus" class="sprite-symbol-usage" /></svg>
