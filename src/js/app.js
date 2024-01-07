@@ -8,10 +8,14 @@ import '../images/svg-icons/icon-folder.svg';
 import '../images/svg-icons/icon-plus.svg';
 
 // Components
-import addToFav from './addToFav';
-import ProductManager from './products/class-product-manager';
+import addToFav from './app/add-to-fav';
+import addToLibrary from './app/add-to-library';
+import showFavouritesPane from './app/show-favourites-library-pane';
+import inputMaxLength from './app/input-max-length';
+import backButton from './app/back-button';
 
 addToFav.init();
-
-// Init products
-new ProductManager('dist/js/data.json', '.products-grid');
+addToLibrary.init();
+showFavouritesPane.init();
+inputMaxLength.init();
+backButton.init();

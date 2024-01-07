@@ -1,0 +1,40 @@
+.favourites-pane {
+  background-color: rgba(#e7e7e7, 0.8);
+  display: none;
+  min-height: 100vh;
+  padding: em(35) 0 em(60);
+  position: fixed;
+  top: em(61);
+  width: 100vw;
+
+  &.opened {
+    display: block;
+  }
+
+  &__close-btn {
+    fill: $white;
+    height: em(30);
+    position: absolute;
+    right: em(20);
+    top: em(15);
+    width: em(30);
+
+    .icon {
+      height: 100%;
+      stroke: $dark-turquoise;
+      transform: rotate(45deg);
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    max-height: calc(100vh - 136px);
+    overflow: auto;
+    padding: em(20);
+  }
+
+  .product-add-btn,
+  .product-fav-btn {
+    display: none;
+  }
+}

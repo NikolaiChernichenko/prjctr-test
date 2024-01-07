@@ -1,16 +1,35 @@
-.products-grid {
+.products-grid,
+.favourites-pane__grid {
   display: grid;
   gap: em(14) em(12);
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: em(20);
+
+  @include mq($min: 768) {
+    gap: em(20);
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: em(45);
+  }
+
+  @include mq($min: 1024) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.favourites-pane__grid {
+  @include mq($min: 1024) {
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    max-width: em(960);
+  }
 }
 
 // Product card
 .product-grid__item {
   color: $dark-turquoise;
-  font-family: $plus-jakarta;
   display: flex;
   flex-direction: column;
+  font-family: $plus-jakarta;
   justify-content: space-between;
 
   .product-cover {
@@ -20,6 +39,7 @@
     position: relative;
 
     img {
+      aspect-ratio: 1/1;
       display: block;
       width: 100%;
     }
@@ -30,6 +50,7 @@
     background-color: $white;
     border: none;
     border-radius: em(4);
+    cursor: pointer;
     display: flex;
     height: em(24);
     justify-content: center;
@@ -41,16 +62,18 @@
 
     .icon {
       display: block;
+      fill: transparent;
       height: em(14);
       stroke: $dark-turquoise;
+      transition: all .2s;
       width: em(14);
-      fill: transparent;
     }
 
     &.active {
       .icon {
         fill: #ffa600;
         stroke: #ffa600;
+        transition: all .2s;
       }
     }
   }
@@ -91,19 +114,41 @@
   .product-add-btn {
     align-items: center;
     background-color: $dark-turquoise;
-    border: none;
+    border: solid em(2) $dark-turquoise;
     border-radius: em(4);
     color: $white;
+    cursor: pointer;
     display: flex;
+    font-weight: 500;
     gap: 0 em(6);
     justify-content: center;
-    padding: em(11) em(20) em(13);
+    padding: em(9) em(20) em(11);
+    transition: all .3s;
+    transition: background-color 0.25s;
     width: 100%;
+
+    &:hover {
+      background-color: lighten($dark-turquoise, 5);
+      transition: background-color 0.25s;
+    }
 
     .icon {
       height: em(20);
       stroke: $white;
+      transition: all .3s;
       width: em(20);
+    }
+
+    &.active {
+      background-color: transparent;
+      color: $dark-turquoise;
+      transition: all .3s;
+
+      .icon {
+        stroke: $dark-turquoise;
+        transform: translateY(1px) rotate(45deg);
+        transition: all .3s;
+      }
     }
   }
 }

@@ -2,12 +2,16 @@
   margin: 0 auto;
   max-width: em(960);
   padding: 0 em(20);
-
-  @include mq($min: 1300) {
-    max-width: em(1200);
-  }
 }
 
 .site-main {
-  margin-top: em(16);
+  margin: em(16) auto em(35);
+
+  @include mq($min: 768) {
+    margin-bottom: em(60);
+  }
+
+  [class^='opened-pane-'] & {
+    filter: blur(15px);
+  }
 }

@@ -15,9 +15,15 @@
     color: $white;
     display: flex;
     font-family: $poppins;
-    text-decoration: none;
-    gap: em(6, 18);
     font-size: em(18);
+    gap: em(6, 18);
+    text-decoration: none;
+    transition: opacity .25s;
+
+    [class^='opened-pane-'] & {
+      opacity: 0.5;
+      transition: opacity .25s;
+    }
   }
 
   &__tools {
@@ -29,14 +35,36 @@
       background-color: transparent;
       border: none;
       padding: 0;
+
+      &.active {
+        .icon {
+          fill: $white;
+          transition: all 0.25s;
+        }
+      }
+
+      .opened-pane-fav & {
+        &.nav-bar__tools-btn--favourites .icon {
+          fill: #ffc400;
+          stroke: #ffc400;
+        }
+      }
+
+      .opened-pane-lib & {
+        &.nav-bar__tools-btn--library .icon {
+          fill: #ffc400;
+          stroke: #ffc400;
+        }
+      }
     }
   }
 
   .icon {
-    height: em(24);
-    stroke: $white;
-    width: em(24);
     display: block;
     fill: transparent;
+    height: em(24);
+    stroke: $white;
+    transition: all 0.25s;
+    width: em(24);
   }
 }

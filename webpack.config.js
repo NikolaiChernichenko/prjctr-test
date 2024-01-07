@@ -131,11 +131,6 @@ module.exports = {
             ignore: ['*.DS_Store', 'Thumbs.db'],
           },
         },
-        {
-          from: path.resolve(environment.paths.source, 'js/*.json'),
-          context: path.resolve(__dirname, 'src'),
-          to: path.resolve(environment.paths.output, ''),
-        },
       ],
     }),
     new SpriteLoaderPlugin(),

@@ -22,28 +22,41 @@
 </head>
 
 <body>
+	<!-- I had to inline SVG sprite in order to make it work without server-->
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none">
+		<defs><style>.sprite-symbol-usage {display: none;}.sprite-symbol-usage:target {display: inline;}</style>
+			<symbol viewBox="0 0 24 24" fill="none" id="icon-arrow">
+				<path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</symbol><symbol viewBox="0 0 24 24" id="icon-folder">
+				<path d="M21 18.2222V9.33333C21 8.86184 20.8104 8.40965 20.4728 8.07625C20.1352 7.74286 19.6774 7.55556 19.2 7.55556H13.1124C12.7781 7.55554 12.4503 7.46356 12.1659 7.28992C11.8816 7.11628 11.6518 6.86783 11.5023 6.57244L10.6977 4.98311C10.5482 4.68759 10.3182 4.43906 10.0337 4.2654C9.74912 4.09175 9.4212 3.99985 9.0867 4H4.8C4.32261 4 3.86477 4.1873 3.52721 4.5207C3.18964 4.8541 3 5.30628 3 5.77778V18.2222C3 18.6937 3.18964 19.1459 3.52721 19.4793C3.86477 19.8127 4.32261 20 4.8 20H19.2C19.6774 20 20.1352 19.8127 20.4728 19.4793C20.8104 19.1459 21 18.6937 21 18.2222Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+			</symbol><symbol viewBox="0 0 20 18" id="icon-heart">
+				<path d="M19 6.32647C19 11.4974 10 17 10 17C10 17 1 11.4974 1 6.32647C1 -0.694364 10 -0.599555 10 5.57947C10 -0.599555 19 -0.507124 19 6.32647Z" stroke-width="2" stroke-linejoin="round" />
+			</symbol><symbol viewBox="0 0 20 20" fill="none" id="icon-plus">
+				<path d="M10 16.6666V9.99998M10 9.99998V3.33331M10 9.99998H16.6667M10 9.99998H3.33334" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+			</symbol></defs><use id="icon-arrow-usage" xlink:href="#icon-arrow" class="sprite-symbol-usage" /><use id="icon-folder-usage" xlink:href="#icon-folder" class="sprite-symbol-usage" /><use id="icon-heart-usage" xlink:href="#icon-heart" class="sprite-symbol-usage" /><use id="icon-plus-usage" xlink:href="#icon-plus" class="sprite-symbol-usage" />
+	</svg>
 	<!-- Top nav bar -->
 	<header class="site-header">
 		<div class="content-container">
 			<div class="nav-bar">
 				<a href="#" class="nav-bar__back-btn">
 					<svg class="icon">
-						<use xlink:href="images/svg-sprite.svg#icon-arrow"></use>
+						<use xlink:href="#icon-arrow"></use>
 					</svg>
 					<span>Back</span>
 				</a>
 				<div class="nav-bar__tools">
 					<button class="nav-bar__tools-btn nav-bar__tools-btn--favourites" aria-label="Favourites">
 						<svg class="icon">
-							<use xlink:href="images/svg-sprite.svg#icon-heart"></use>
+							<use xlink:href="#icon-heart"></use>
 						</svg>
 						<span class="screen-reader-only">Favourites</span>
 					</button>
-					<button class="nav-bar__tools-btn nav-bar__tools-btn--collection" aria-label="My collection">
+					<button class="nav-bar__tools-btn nav-bar__tools-btn--library" aria-label="My library">
 						<svg class="icon">
-							<use xlink:href="images/svg-sprite.svg#icon-folder"></use>
+							<use xlink:href="#icon-folder"></use>
 						</svg>
-						<span class="screen-reader-only">My collection</span>
+						<span class="screen-reader-only">My library</span>
 					</button>
 				</div>
 			</div>
@@ -54,8 +67,11 @@
 		<!-- Product filters -->
 		<div class="product-filters">
 			<form class="product-filters__form">
-				<label for="artist" class="screen-reader-only product-filters__label">Artist</label>
-				<input type="text" id="artist" name="artist" class="product-filters__input input-artist" placeholder="Artist">
+				<div class="product-filters__input-wrapper">
+					<label for="artist" class="screen-reader-only product-filters__label">Artist</label>
+					<input type="text" id="artist" name="artist" maxlength="20" class="product-filters__input input-artist" placeholder="Artist">
+					<div id="error-message" class="error-message">Exceeded maximum character limit.</div>
+				</div>
 
 				<label for="genre" class="screen-reader-only product-filters__label">Genre</label>
 				<div class="product-filters__select genre-select">
@@ -100,7 +116,181 @@
 		</div>
 
 		<!-- Products grid -->
-		<div class="products-grid"></div>
+		<div class="products-grid">
+			<div class="product-grid__item" data-product="product-1">
+				<div class="product-cover">
+					<img src="images/content/cover-1.jpg"
+					     srcset="images/content/cover-1.jpg 1x,
+                                images/content/cover-1@2x.jpg 2x"
+					     alt="Album cover - Let There Be Rock">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favourites</span>
+						<svg class="icon">
+							<use xlink:href="#icon-heart"></use>
+						</svg>
+					</button>
+				</div>
+				<h3 class="product-title">Let There Be Rock</h3>
+				<h4 class="product-band">AC/DC</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1990</span></p>
+					<p class="product-details__field">Style: <span>Punk, Dub, Funk</span></p>
+					<p class="product-details__field">Country: <span>USA</span></p>
+				</div>
+				<button class="product-add-btn">
+					<span>Add</span>
+					<svg class="icon">
+						<use xlink:href="#icon-plus"></use>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Product 2-->
+			<div class="product-grid__item" data-product="product-2">
+				<div class="product-cover">
+					<img src="images/content/cover-2.jpg"
+					     srcset="images/content/cover-2.jpg 1x,
+                                images/content/cover-2@2x.jpg 2x"
+					     alt="Album cover - Let There Be Rock">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favourites</span>
+						<svg class="icon">
+							<use xlink:href="#icon-heart"></use>
+						</svg>
+					</button>
+				</div>
+				<h3 class="product-title">High Voltage</h3>
+				<h4 class="product-band">AC/DC</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1975</span></p>
+					<p class="product-details__field">Style: <span>Punk, Blues, Hard Rock</span></p>
+					<p class="product-details__field">Country: <span>Australia</span></p>
+				</div>
+				<button class="product-add-btn">
+					<span>Add</span>
+					<svg class="icon">
+						<use xlink:href="#icon-plus"></use>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Product 3-->
+			<div class="product-grid__item" data-product="product-3">
+				<div class="product-cover">
+					<img src="images/content/cover-3.jpg"
+					     srcset="images/content/cover-3.jpg 1x,
+                                images/content/cover-3@2x.jpg 2x"
+					     alt="Album cover - Let There Be Rock">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favourites</span>
+						<svg class="icon">
+							<use xlink:href="#icon-heart"></use>
+						</svg>
+					</button>
+				</div>
+				<h3 class="product-title">T.N.T.</h3>
+				<h4 class="product-band">AC/DC</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1975</span></p>
+					<p class="product-details__field">Style: <span>Blues, Hard Rock</span></p>
+					<p class="product-details__field">Country: <span>Australia</span></p>
+				</div>
+				<button class="product-add-btn">
+					<span>Add</span>
+					<svg class="icon">
+						<use xlink:href="#icon-plus"></use>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Product 4-->
+			<div class="product-grid__item" data-product="product-4">
+				<div class="product-cover">
+					<img src="images/content/cover-4.jpg"
+					     srcset="images/content/cover-4.jpg 1x,
+                                images/content/cover-4@2x.jpg 2x"
+					     alt="Album cover - Let There Be Rock">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favourites</span>
+						<svg class="icon">
+							<use xlink:href="#icon-heart"></use>
+						</svg>
+					</button>
+				</div>
+				<h3 class="product-title">Back In Black</h3>
+				<h4 class="product-band">AC/DC</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1975</span></p>
+					<p class="product-details__field">Style: <span>Blues, Hard Rock</span></p>
+					<p class="product-details__field">Country: <span>Australia</span></p>
+				</div>
+				<button class="product-add-btn">
+					<span>Add</span>
+					<svg class="icon">
+						<use xlink:href="#icon-plus"></use>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Product 5-->
+			<div class="product-grid__item" data-product="product-5">
+				<div class="product-cover">
+					<img src="images/content/cover-5.jpg"
+					     srcset="images/content/cover-5.jpg 1x,
+                                images/content/cover-5@2x.jpg 2x"
+					     alt="Album cover - Let There Be Rock">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favourites</span>
+						<svg class="icon">
+							<use xlink:href="#icon-heart"></use>
+						</svg>
+					</button>
+				</div>
+				<h3 class="product-title">Metallica</h3>
+				<h4 class="product-band">Metallica</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1991</span></p>
+					<p class="product-details__field">Style: <span>Heavy Metal</span></p>
+					<p class="product-details__field">Country: <span>USA</span></p>
+				</div>
+				<button class="product-add-btn">
+					<span>Add</span>
+					<svg class="icon">
+						<use xlink:href="#icon-plus"></use>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Product 6-->
+			<div class="product-grid__item" data-product="product-6">
+				<div class="product-cover">
+					<img src="images/content/cover-6.jpg"
+					     srcset="images/content/cover-6.jpg 1x,
+                                images/content/cover-6@2x.jpg 2x"
+					     alt="Album cover - Let There Be Rock">
+					<button class="product-fav-btn">
+						<span class="screen-reader-only">Add to favourites</span>
+						<svg class="icon">
+							<use xlink:href="#icon-heart"></use>
+						</svg>
+					</button>
+				</div>
+				<h3 class="product-title">Master Of Puppets</h3>
+				<h4 class="product-band">Metallica</h4>
+				<div class="product-details">
+					<p class="product-details__field">Year: <span>1986</span></p>
+					<p class="product-details__field">Style: <span>Thrash, Speed Metal</span></p>
+					<p class="product-details__field">Country: <span>USA</span></p>
+				</div>
+				<button class="product-add-btn">
+					<span>Add</span>
+					<svg class="icon">
+						<use xlink:href="#icon-plus"></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+
 		<!-- Pagination -->
 		<div class="pagination">
 			<ul class="pagination-list">
@@ -108,10 +298,19 @@
 				<li class="pagination-item"><a href="?page=2"  class="pagination-link">2</a></li>
 				<li class="pagination-item"><a href="?page=3"  class="pagination-link">3</a></li>
 				<li class="pagination-item"><span class="pagination-ellipsis">...</span></li>
-				<li class="pagination-item"><a href="#" class="pagination-link">8</a></li>
+				<li class="pagination-item"><a href="?page=8" class="pagination-link">8</a></li>
 			</ul>
 		</div>
 	</main>
+
+	<div class="favourites-pane">
+		<span class="favourites-pane__close-btn">
+			<svg class="icon">
+				<use xlink:href="#icon-plus"></use>
+			</svg>
+		</span>
+		<div class="favourites-pane__grid"></div>
+	</div>
 </body>
 
 </html>

@@ -11,16 +11,16 @@
     "country country"
     "search search";
   }
+  &__input-wrapper {
+    grid-area: artist;
+  }
 
   &__input {
     border: solid em(1) #EDEEF0;
     border-radius: em(4);
     color: $ink-light;
     padding: em(11) em(14);
-
-    &.input-artist {
-      grid-area: artist;
-    }
+    width: 100%;
   }
 
   &__select {
@@ -69,5 +69,23 @@
     font-size: em(16);
     grid-area: search;
     padding: em(11) em(20) em(13);
+  }
+
+  .error-message {
+    background: red;
+    border-bottom-left-radius: em(4);
+    border-bottom-right-radius: em(4);
+    color: #fff;
+    display: none;
+    font-size: em(12);
+    font-weight: 600;
+    padding: em(1) em(5);
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+
+    &.active {
+      display: block;
+    }
   }
 }
