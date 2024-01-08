@@ -5,13 +5,14 @@
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: em(20);
 
-  @include mq($min: 768) {
-    gap: em(20);
+  @include mq($min: 600) {
+    gap: em(15);
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: em(45);
   }
 
-  @include mq($min: 1024) {
+  @include mq($min: 768) {
+    gap: em(20);
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -42,6 +43,7 @@
       aspect-ratio: 1/1;
       display: block;
       width: 100%;
+      height: auto;
     }
   }
 

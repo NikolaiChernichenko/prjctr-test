@@ -14,7 +14,6 @@
 	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
 	<link rel="shortcut icon" href="images/favicon/favicon.ico">
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="images/favicon/browserconfig.xml">
 	<meta name="theme-color" content="##08364">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +34,7 @@
 				<path d="M10 16.6666V9.99998M10 9.99998V3.33331M10 9.99998H16.6667M10 9.99998H3.33334" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
 			</symbol></defs><use id="icon-arrow-usage" xlink:href="#icon-arrow" class="sprite-symbol-usage" /><use id="icon-folder-usage" xlink:href="#icon-folder" class="sprite-symbol-usage" /><use id="icon-heart-usage" xlink:href="#icon-heart" class="sprite-symbol-usage" /><use id="icon-plus-usage" xlink:href="#icon-plus" class="sprite-symbol-usage" />
 	</svg>
+
 	<!-- Top nav bar -->
 	<header class="site-header">
 		<div class="content-container">
@@ -69,14 +69,14 @@
 			<form class="product-filters__form">
 				<div class="product-filters__input-wrapper">
 					<label for="artist" class="screen-reader-only product-filters__label">Artist</label>
-					<input type="text" id="artist" name="artist" maxlength="20" class="product-filters__input input-artist" placeholder="Artist">
-					<div id="error-message" class="error-message">Exceeded maximum character limit.</div>
+					<input type="text" id="artist" name="artist" maxlength="30" class="product-filters__input input-artist" placeholder="Artist">
+					<div id="error-message" class="error-message"></div>
 				</div>
 
 				<label for="genre" class="screen-reader-only product-filters__label">Genre</label>
 				<div class="product-filters__select genre-select">
 					<select id="genre" name="genre" class="product-filters__select-element">
-						<option value="Genre">Genre</option>
+						<option value="Genre" disabled selected>Genre</option>
 						<option value="Rock">Rock</option>
 						<option value="Blues">Blues</option>
 						<option value="Dark country">Dark country</option>
@@ -88,21 +88,21 @@
 				<label for="decade" class="screen-reader-only product-filters__label">Decade</label>
 				<div class="product-filters__select decade-select">
 					<select id="decade" name="decade" class="product-filters__select-element">
-						<option value="Decade">Decade</option>
-						<option value="1950-60">1950-60 yy</option>
-						<option value="1960-70">1960-70 yy</option>
-						<option value="1970-80">1970-80 yy</option>
-						<option value="1980-90">1980-90 yy</option>
-						<option value="1990-00">1990-00 yy</option>
-						<option value="2000-10">2000-10 yy</option>
-						<option value="2020-30">2020-30 yy</option>
+						<option value="Decade" disabled selected>Decade</option>
+						<option value="1950-60">1950–60</option>
+						<option value="1960-70">1960–70</option>
+						<option value="1970-80">1970–80</option>
+						<option value="1980-90">1980–90</option>
+						<option value="1990-00">1990–00</option>
+						<option value="2000-10">2000–10</option>
+						<option value="2020-30">2020–30</option>
 					</select>
 				</div>
 
 				<label for="country" class="screen-reader-only product-filters__label">Country</label>
 				<div class="product-filters__select country-select">
 					<select id="country" name="country" class="product-filters__select-element">
-						<option value="Country">Country</option>
+						<option value="Country" disabled selected>Country</option>
 						<option value="Australia">Australia</option>
 						<option value="Canada">Canada</option>
 						<option value="UK">UK</option>
@@ -111,20 +111,20 @@
 						<option value="Other">Other</option>
 					</select>
 				</div>
-				<button type="button" class="product-filters__button">Search</button>
+				<button type="button" class="product-filters__button" aria-label="Search for vinyl">Search</button>
 			</form>
 		</div>
 
 		<!-- Products grid -->
 		<div class="products-grid">
-			<div class="product-grid__item" data-product="product-1">
+			<article class="product-grid__item" data-product="product-1">
 				<div class="product-content">
-					<div class="product-cover">
-						<img src="images/content/cover-1.jpg"
+					<div class="product-cover" aria-label="Album cover - Let There Be Rock by AC/DC">
+						<img width="169" height="169" src="images/content/cover-1.jpg"
 						     srcset="images/content/cover-1.jpg 1x,
 	                                images/content/cover-1@2x.jpg 2x"
-						     alt="Album cover - Let There Be Rock">
-						<button class="product-fav-btn">
+						     alt="Album cover - Let There Be Rock by AC/DC">
+						<button class="product-fav-btn" aria-label="Add this album to favourites">
 							<span class="screen-reader-only">Add to favourites</span>
 							<svg class="icon">
 								<use xlink:href="#icon-heart"></use>
@@ -145,17 +145,17 @@
 						<use xlink:href="#icon-plus"></use>
 					</svg>
 				</button>
-			</div>
+			</article>
 
 			<!-- Product 2-->
-			<div class="product-grid__item" data-product="product-2">
+			<article class="product-grid__item" data-product="product-2">
 				<div class="product-content">
-					<div class="product-cover">
-						<img src="images/content/cover-2.jpg"
+					<div class="product-cover" aria-label="Album cover - High Voltage by AC/DC">
+						<img width="169" height="169" src="images/content/cover-2.jpg"
 						     srcset="images/content/cover-2.jpg 1x,
 	                                images/content/cover-2@2x.jpg 2x"
-						     alt="Album cover - Let There Be Rock">
-						<button class="product-fav-btn">
+						     alt="Album cover - High Voltage by AC/DC">
+						<button class="product-fav-btn" aria-label="Add this album to favourites">
 							<span class="screen-reader-only">Add to favourites</span>
 							<svg class="icon">
 								<use xlink:href="#icon-heart"></use>
@@ -176,17 +176,17 @@
 						<use xlink:href="#icon-plus"></use>
 					</svg>
 				</button>
-			</div>
+			</article>
 
 			<!-- Product 3-->
-			<div class="product-grid__item" data-product="product-3">
+			<article class="product-grid__item" data-product="product-3">
 				<div class="product-content">
-					<div class="product-cover">
-						<img src="images/content/cover-3.jpg"
+					<div class="product-cover" aria-label="Album cover - T.N.T. by AC/DC">
+						<img width="169" height="169" src="images/content/cover-3.jpg"
 						     srcset="images/content/cover-3.jpg 1x,
 	                                images/content/cover-3@2x.jpg 2x"
-						     alt="Album cover - Let There Be Rock">
-						<button class="product-fav-btn">
+						     alt="Album cover - T.N.T. by AC/DC">
+						<button class="product-fav-btn" aria-label="Add this album to favourites">
 							<span class="screen-reader-only">Add to favourites</span>
 							<svg class="icon">
 								<use xlink:href="#icon-heart"></use>
@@ -207,17 +207,17 @@
 						<use xlink:href="#icon-plus"></use>
 					</svg>
 				</button>
-			</div>
+			</article>
 
 			<!-- Product 4-->
-			<div class="product-grid__item" data-product="product-4">
+			<article class="product-grid__item" data-product="product-4">
 				<div class="product-content">
-					<div class="product-cover">
-						<img src="images/content/cover-4.jpg"
+					<div class="product-cover" aria-label="Album cover - Back In Black by AC/DC">
+						<img width="169" height="169" src="images/content/cover-4.jpg"
 						     srcset="images/content/cover-4.jpg 1x,
 	                                images/content/cover-4@2x.jpg 2x"
-						     alt="Album cover - Let There Be Rock">
-						<button class="product-fav-btn">
+						     alt="Album cover - Back In Black by AC/DC">
+						<button class="product-fav-btn" aria-label="Add this album to favourites">
 							<span class="screen-reader-only">Add to favourites</span>
 							<svg class="icon">
 								<use xlink:href="#icon-heart"></use>
@@ -238,17 +238,17 @@
 						<use xlink:href="#icon-plus"></use>
 					</svg>
 				</button>
-			</div>
+			</article>
 
 			<!-- Product 5-->
-			<div class="product-grid__item" data-product="product-5">
+			<article class="product-grid__item" data-product="product-5">
 				<div class="product-content">
-					<div class="product-cover">
-						<img src="images/content/cover-5.jpg"
+					<div class="product-cover" aria-label="Album cover - Metallica by Metallica">
+						<img width="169" height="169" src="images/content/cover-5.jpg"
 						     srcset="images/content/cover-5.jpg 1x,
 	                                images/content/cover-5@2x.jpg 2x"
-						     alt="Album cover - Let There Be Rock">
-						<button class="product-fav-btn">
+						     alt="Album cover - Metallica by Metallica">
+						<button class="product-fav-btn" aria-label="Add this album to favourites">
 							<span class="screen-reader-only">Add to favourites</span>
 							<svg class="icon">
 								<use xlink:href="#icon-heart"></use>
@@ -269,17 +269,17 @@
 						<use xlink:href="#icon-plus"></use>
 					</svg>
 				</button>
-			</div>
+			</article>
 
 			<!-- Product 6-->
-			<div class="product-grid__item" data-product="product-6">
+			<article class="product-grid__item" data-product="product-6">
 				<div class="product-content">
-					<div class="product-cover">
-						<img src="images/content/cover-6.jpg"
+					<div class="product-cover" role="img" aria-label="Album cover - Let There Be Rock by Metallica">
+						<img width="169" height="169" src="images/content/cover-6.jpg"
 						     srcset="images/content/cover-6.jpg 1x,
 	                                images/content/cover-6@2x.jpg 2x"
-						     alt="Album cover - Let There Be Rock">
-						<button class="product-fav-btn">
+						     alt="Album cover - Let There Be Rock by Metallica">
+						<button class="product-fav-btn" aria-label="Add this album to favourites">
 							<span class="screen-reader-only">Add to favourites</span>
 							<svg class="icon">
 								<use xlink:href="#icon-heart"></use>
@@ -294,29 +294,30 @@
 						<p class="product-details__field">Country: <span>USA</span></p>
 					</div>
 				</div>
-				<button class="product-add-btn">
+				<button class="product-add-btn" aria-label="Add to Library">
 					<span>Add</span>
 					<svg class="icon">
 						<use xlink:href="#icon-plus"></use>
 					</svg>
 				</button>
-			</div>
+			</article>
 		</div>
 
 		<!-- Pagination -->
-		<div class="pagination">
+		<div class="pagination" aria-label="Page Navigation">
 			<ul class="pagination-list">
-				<li class="pagination-item active"><a href="#" class="pagination-link">1</a></li>
-				<li class="pagination-item"><a href="?page=2"  class="pagination-link">2</a></li>
-				<li class="pagination-item"><a href="?page=3"  class="pagination-link">3</a></li>
-				<li class="pagination-item"><span class="pagination-ellipsis">...</span></li>
+				<li class="pagination-item active"><span class="pagination-link" aria-current="page">1</span></li>
+				<li class="pagination-item"><a href="?page=2" class="pagination-link">2</a></li>
+				<li class="pagination-item"><a href="?page=3" class="pagination-link">3</a></li>
+				<li class="pagination-item"><span class="pagination-ellipsis" aria-label="More pages">...</span></li>
 				<li class="pagination-item"><a href="?page=8" class="pagination-link">8</a></li>
 			</ul>
 		</div>
 	</main>
 
+	<!-- Pane where favourites / my library are shown -->
 	<div class="favourites-pane">
-		<span class="favourites-pane__close-btn">
+		<span class="favourites-pane__close-btn" aria-label="Close favourites pane">
 			<svg class="icon">
 				<use xlink:href="#icon-plus"></use>
 			</svg>

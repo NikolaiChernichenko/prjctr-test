@@ -439,6 +439,25 @@ body[class^=opened-pane-] {
   -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
+.nav-bar__back-btn .icon {
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+@media (hover: hover) {
+  .nav-bar__back-btn:hover {
+    text-decoration: underline;
+  }
+  .nav-bar__back-btn:hover .icon {
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+    transition: transform 0.25s, -webkit-transform 0.25s;
+  }
+}
 .nav-bar__tools {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -452,6 +471,12 @@ body[class^=opened-pane-] {
   background-color: transparent;
   border: none;
   padding: 0;
+}
+@media (hover: hover) {
+  .nav-bar__tools-btn:hover .icon {
+    -webkit-transform: scale(1.07);
+            transform: scale(1.07);
+  }
 }
 .nav-bar__tools-btn.active .icon {
   fill: #fff;
@@ -565,17 +590,18 @@ body[class^=opened-pane-] {
   grid-template-columns: repeat(2, 1fr);
   margin-bottom: 1.25em;
 }
-@media (min-width: 48em) {
+@media (min-width: 37.5em) {
   .products-grid,
   .favourites-pane__grid {
-    gap: 1.25em;
+    gap: 0.9375em;
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 2.8125em;
   }
 }
-@media (min-width: 64em) {
+@media (min-width: 48em) {
   .products-grid,
   .favourites-pane__grid {
+    gap: 1.25em;
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -612,6 +638,7 @@ body[class^=opened-pane-] {
   aspect-ratio: 1/1;
   display: block;
   width: 100%;
+  height: auto;
 }
 .product-grid__item .product-fav-btn {
   -webkit-box-align: center;
@@ -758,6 +785,7 @@ body[class^=opened-pane-] {
 .pagination-item.active {
   background-color: #083644;
   color: #fff;
+  cursor: default;
 }
 .pagination-link {
   color: inherit;

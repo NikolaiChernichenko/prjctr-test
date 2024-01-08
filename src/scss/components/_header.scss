@@ -24,6 +24,21 @@
       opacity: 0.5;
       transition: opacity .25s;
     }
+
+    .icon {
+      transition: transform 0.25s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+
+        .icon {
+          transform: translateX(-2px);
+          transition: transform 0.25s;
+        }
+      }
+    }
   }
 
   &__tools {
@@ -35,6 +50,14 @@
       background-color: transparent;
       border: none;
       padding: 0;
+
+      @media (hover: hover) {
+        &:hover {
+          .icon {
+            transform: scale(1.07);
+          }
+        }
+      }
 
       &.active {
         .icon {

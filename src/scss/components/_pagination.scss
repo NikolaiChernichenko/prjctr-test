@@ -20,7 +20,8 @@
 
     &.active {
       background-color: $dark-turquoise;
-      color: $white
+      color: $white;
+      cursor: default;
     }
   }
 
